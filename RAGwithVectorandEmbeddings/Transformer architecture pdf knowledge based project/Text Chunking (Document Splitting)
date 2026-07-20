@@ -1,0 +1,527 @@
+Complete Code
+----------------
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=200
+)
+
+documents = text_splitter.split_documents(docs)
+
+documents[:5]
+
+=================
+
+
+This is one of the most important code blocks in RAG. It is called Text Chunking (Document Splitting).
+
+Code: Split Documents into Chunks using RecursiveCharacterTextSplitter
+
+| Line No. | Code                                                                 | Purpose                                                                        | Output                                                      |
+| -------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **1**    | `from langchain.text_splitter import RecursiveCharacterTextSplitter` | Imports the **RecursiveCharacterTextSplitter** class from LangChain.           | Ready to split large documents into smaller chunks.         |
+| **2**    | `text_splitter = RecursiveCharacterTextSplitter(`                    | Creates a **Text Splitter** object.                                            | Initializes the text splitting process.                     |
+| **3**    | `chunk_size=1000,`                                                   | Sets the **maximum size** of each text chunk to **1000 characters**.           | Each chunk contains up to 1000 characters.                  |
+| **4**    | `chunk_overlap=200`                                                  | Repeats the last **200 characters** from the previous chunk in the next chunk. | Preserves context between consecutive chunks.               |
+| **5**    | `)`                                                                  | Completes the configuration of the text splitter.                              | Text splitter is ready for use.                             |
+| **6**    | `documents = text_splitter.split_documents(docs)`                    | Splits the loaded PDF (`docs`) into multiple smaller document chunks.          | Creates a list of chunked `Document` objects.               |
+| **7**    | `documents[:5]`                                                      | Displays the **first five document chunks**.                                   | Shows the first five chunks to verify successful splitting. |
+
+=============
+
+Parameter Explanation
+
+| Parameter         | Value  | Meaning                                                | Why It Is Used                                                               |
+| ----------------- | ------ | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **chunk_size**    | `1000` | Maximum number of characters in each chunk             | Prevents sending very large text to the embedding model and vector database. |
+| **chunk_overlap** | `200`  | Number of characters shared between consecutive chunks | Preserves context when information spans two chunks.                         |
+
+=============
+
+Before and After Chunking
+
+| Before Chunking        | After Chunking               |
+| ---------------------- | ---------------------------- |
+| One large PDF document | Multiple smaller text chunks |
+| Difficult to process   | Easy to embed and search     |
+| Slow retrieval         | Faster similarity search     |
+| High memory usage      | Efficient vector storage     |
+
+========
+
+Workflow
+
+PDF Document
+      │
+      ▼
+RecursiveCharacterTextSplitter
+      │
+      ▼
+Chunk 1
+Chunk 2
+Chunk 3
+Chunk 4
+...
+      │
+      ▼
+Embedding Model
+      │
+      ▼
+FAISS / ChromaDB
+
+========
+
+Real-Time Example
+
+| Original Text            | Chunk Created                                                  |
+| ------------------------ | -------------------------------------------------------------- |
+| 3000-character paragraph | Chunk 1 (1–1000 characters)                                    |
+| Continue text            | Chunk 2 (801–1800 characters, including 200-character overlap) |
+| Remaining text           | Chunk 3 (1601–3000 characters, including overlap)              |
+
+
+========
+
+| Question                                       | Answer                                                                                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **What is `RecursiveCharacterTextSplitter`?**  | A LangChain utility that splits large documents into smaller overlapping chunks for RAG applications.                           |
+| **Why do we split documents?**                 | Large documents are difficult for LLMs to process efficiently, so chunking improves embedding, retrieval, and response quality. |
+| **What is `chunk_size`?**                      | The maximum number of characters allowed in each chunk.                                                                         |
+| **What is `chunk_overlap`?**                   | The number of characters repeated between adjacent chunks to preserve context.                                                  |
+| **Why is overlap important?**                  | It prevents important information from being lost when sentences or ideas span multiple chunks.                                 |
+| **What is the output of `split_documents()`?** | A list of smaller LangChain `Document` objects, each representing a chunk of the original document.                             |
+
+
+==============
+
+Complete Code
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=200
+)
+
+documents = text_splitter.split_documents(docs)
+
+documents[:5]
+
+
+=======
+
+Line 1
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+What does this do?
+
+It imports the Text Splitter class from LangChain.
+
+Think of it as a paper cutter.
+
+Large PDF
+
+↓
+
+Paper Cutter
+
+↓
+
+Small Pages
+
+Real-Life Example
+
+Suppose you have a 500-page book.
+
+You cannot give all 500 pages to someone at once.
+
+Instead, you divide it into smaller chapters.
+
+The Text Splitter does the same thing.
+
+Large PDF
+
+↓
+
+Small Chunks
+Line 2
+text_splitter = RecursiveCharacterTextSplitter(
+
+Here we create a Text Splitter object.
+
+Think of it as:
+
+Create a machine
+
+↓
+
+Machine is ready to split text
+Line 3
+chunk_size=1000
+
+This is the most important parameter.
+
+It means
+
+Each chunk can contain a maximum of about 1000 characters.
+
+Example
+
+Suppose your PDF contains
+
+ABCDEFGHIJKLMN...
+
+Length = 3000 characters.
+
+Chunk size = 1000
+
+Result
+
+Chunk 1
+
+Characters 1–1000
+
+↓
+
+Chunk 2
+
+Characters 1001–2000
+
+↓
+
+Chunk 3
+
+Characters 2001–3000
+Why not use the whole PDF?
+
+Imagine your PDF has
+
+100 pages
+
+User asks
+
+Explain Multi-Head Attention.
+
+Should Gemini read
+
+100 pages?
+
+❌ No.
+
+Instead
+
+Only the relevant chunk.
+
+This makes RAG
+
+Faster
+Cheaper
+More accurate
+Line 4
+chunk_overlap=200
+
+This means
+
+Every new chunk repeats the last 200 characters from the previous chunk.
+
+Why?
+
+Suppose your PDF says
+
+Transformer has Encoder...
+
+...Decoder uses Multi Head Attention...
+
+Without overlap
+
+Chunk 1
+
+Transformer has Encoder...
+
+Chunk 2
+
+Decoder uses Multi Head Attention...
+
+The sentence is broken.
+
+With overlap
+
+Chunk 1
+
+Transformer has Encoder...
+
+Decoder...
+
+Chunk 2
+
+Encoder...
+
+Decoder uses Multi Head Attention...
+
+Now the meaning is preserved.
+
+Visual Example
+
+Without overlap
+
+Chunk 1
+
+ABCDEFGHIJ
+
+Chunk 2
+
+KLMNOPQRST
+
+Notice
+
+J and K are separated.
+
+With overlap = 3
+
+Chunk 1
+
+ABCDEFGHIJ
+
+Chunk 2
+
+HIJKLMNOPQ
+
+Now
+
+HIJ appears in both chunks.
+
+This helps preserve context.
+
+Line 5
+documents = text_splitter.split_documents(docs)
+
+Now the actual splitting happens.
+
+Before
+
+PDF
+
+↓
+
+15 Pages
+
+After
+
+Chunk 1
+
+Chunk 2
+
+Chunk 3
+
+Chunk 4
+
+Chunk 5
+
+...
+
+Chunk 80
+
+Now each chunk becomes a LangChain Document object.
+
+Line 6
+documents[:5]
+
+This simply shows
+
+The first 5 chunks.
+
+Example
+
+Chunk 1
+
+Introduction...
+
+--------------------
+
+Chunk 2
+
+Transformer...
+
+--------------------
+
+Chunk 3
+
+Attention...
+
+--------------------
+
+Chunk 4
+
+Scaled Dot Product...
+
+--------------------
+
+Chunk 5
+
+Multi Head Attention...
+Why Do We Split the PDF?
+
+Imagine this PDF
+
+15 Pages
+
+↓
+
+35,000 Characters
+
+Gemini cannot efficiently process the whole document for every question.
+
+Instead
+
+PDF
+
+↓
+
+Chunks
+
+↓
+
+Embeddings
+
+↓
+
+Vector Database
+
+This is much more efficient.
+
+Complete Flow
+PDF
+
+↓
+
+PyPDFLoader
+
+↓
+
+Text
+
+↓
+
+RecursiveCharacterTextSplitter
+
+↓
+
+Chunk 1
+
+Chunk 2
+
+Chunk 3
+
+↓
+
+Embedding Model
+
+↓
+
+Vectors
+
+↓
+
+FAISS / ChromaDB
+Real-Time Example (Restaurant)
+
+Restaurant Menu
+
+100 Pages
+
+User asks
+
+Show me Pizza.
+
+Without Chunking
+
+Read all 100 pages.
+
+Very slow.
+
+With Chunking
+
+Chunk 1
+
+Pizza
+
+Chunk 2
+
+Burger
+
+Chunk 3
+
+Drinks
+
+Only the Pizza chunk is searched.
+
+Much faster.
+
+Why Is It Called "Recursive"?
+
+It tries to split the text intelligently, rather than cutting in the middle of a sentence.
+
+It follows a hierarchy like this:
+
+Paragraph
+
+↓
+
+Sentence
+
+↓
+
+Line
+
+↓
+
+Space
+
+↓
+
+Character
+
+If a paragraph is too long, it tries to split at a sentence. If that's still too long, it tries a line, then a space, and finally a character if necessary.
+
+This helps keep each chunk readable and meaningful.
+
+| Question                                    | Answer                                                                                                                            |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **What is RecursiveCharacterTextSplitter?** | A LangChain text splitter that divides large documents into smaller chunks while trying to preserve context.                      |
+| **Why do we split documents?**              | Large documents are difficult for LLMs to process efficiently, so they are split into smaller chunks for embedding and retrieval. |
+| **What is `chunk_size`?**                   | The maximum number of characters allowed in each chunk.                                                                           |
+| **What is `chunk_overlap`?**                | The number of characters repeated between consecutive chunks to preserve context.                                                 |
+| **Why is overlap important?**               | It prevents important information from being lost when a sentence or concept spans two chunks.                                    |
+| **What happens after chunking?**            | Each chunk is converted into an embedding and stored in a vector database such as FAISS or ChromaDB.                              |
+
+
+====
+
+Easy Way to Remember
+Large PDF
+      │
+      ▼
+RecursiveCharacterTextSplitter
+      │
+      ▼
+Small Chunks
+      │
+      ▼
+Embedding Model
+      │
+      ▼
+FAISS / ChromaDB
+      │
+      ▼
+RAG Chatbot
+
+One-line interview answer:
+
+RecursiveCharacterTextSplitter is a LangChain utility that splits large documents into smaller, overlapping chunks so they can be efficiently embedded, 
+indexed in a vector database, and retrieved for RAG applications.
+
+=========
+
+
+
