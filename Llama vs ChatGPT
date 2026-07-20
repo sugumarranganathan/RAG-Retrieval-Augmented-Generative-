@@ -1,0 +1,13 @@
+Llama vs ChatGPT
+
+| Llama                         | ChatGPT                                 |
+| ----------------------------- | --------------------------------------- |
+| Open Source                   | Closed Source                           |
+| Can run locally               | Runs on OpenAI servers                  |
+| No API required for local use | Usually accessed through API or ChatGPT |
+| Works offline after download  | Internet required                       |
+| Free to download              | API usage is paid beyond free tiers     |
+
+
+=====
+
