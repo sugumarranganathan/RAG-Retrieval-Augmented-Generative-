@@ -1,0 +1,162 @@
+Llama vs Ollama
+-----------------
+
+Llama is the AI model.
+
+Ollama is the software that runs the AI model on your computer.
+
+=====
+Think like this:
+
+Llama = Car
+
+Ollama = Driver
+
+Without the driver,
+
+the car doesn't move.
+
+Another example
+
+Movie = Llama
+
+VLC Player = Ollama
+
+Movie
+
+↓
+
+Needs VLC
+
+↓
+
+Plays movie
+
+Llama
+
+↓
+
+Needs Ollama
+
+↓
+
+Runs locally
+
+================
+
+
+
+
+
+Why Do We Need Ollama?
+
+Suppose your company has confidential documents.
+
+You cannot upload them to ChatGPT.
+
+Instead
+
+Install Ollama
+
+↓
+
+Download Llama
+
+↓
+
+Run locally
+
+↓
+
+Company documents never leave your computer.
+
+=========
+
+What is Llama?
+
+Llama (Large Language Model Meta AI) is an open-source Large Language Model (LLM) developed by Meta (Facebook).
+
+It is similar to:
+
+ChatGPT (OpenAI)
+Gemini (Google)
+Claude (Anthropic)
+Mistral AI
+
+But Llama is open-source, so you can download and run it yourself.
+
+Simple Definition
+
+Llama is an AI brain that understands and generates human language.
+
+Who Developed Llama?
+
+| Item         | Details                                         |
+| ------------ | ----------------------------------------------- |
+| Model Name   | Llama (Large Language Model Meta AI)            |
+| Developed By | Meta (Facebook AI)                              |
+| Country      | 🇺🇸 United States                              |
+| Type         | Open-source Large Language Model                |
+| Released     | 2023 (Llama 1), later Llama 2, Llama 3, Llama 4 |
+
+
+Real-Time Example
+
+Imagine ChatGPT.
+
+When you ask
+
+Write Python code.
+
+ChatGPT generates code.
+
+Llama can do the same.
+
+Example:
+
+User
+
+↓
+
+Write a leave application.
+
+↓
+
+Llama
+
+↓
+
+Generated Leave Application
+What Can Llama Do?
+
+✅ Answer Questions
+
+✅ Write Code
+
+✅ Translate Languages
+
+✅ Summarize Documents
+
+✅ Generate SQL
+
+✅ Generate Emails
+
+✅ Create Stories
+
+✅ Explain Programming
+
+Example
+
+Prompt
+
+Explain Machine Learning.
+
+Llama replies
+
+Machine Learning is a branch of Artificial Intelligence...
+
+===========
+
+
+
+
