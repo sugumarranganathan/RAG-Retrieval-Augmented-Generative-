@@ -1,0 +1,39 @@
+| Feature                           | **Llama**                            | **Ollama**                             | **FAISS**                                        | **Embedding Model**                                | **RAG (Retrieval-Augmented Generation)**                                 |
+| --------------------------------- | ------------------------------------ | -------------------------------------- | ------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------ |
+| **What is it?**                   | Large Language Model (LLM)           | Software to run LLMs locally           | Vector Database                                  | Converts text into vectors                         | AI technique that combines retrieval + LLM                               |
+| **Developed By**                  | Meta (Facebook AI)                   | Ollama Inc.                            | Meta (Facebook AI Research)                      | OpenAI, Google, SentenceTransformers, Cohere, etc. | Meta AI (concept), widely adopted by OpenAI, LangChain, LlamaIndex, etc. |
+| **Country**                       | 🇺🇸 USA                             | 🇺🇸 USA                               | 🇺🇸 USA                                         | 🌍 Various companies                               | 🌍 AI research concept (used worldwide)                                  |
+| **Purpose**                       | Generates text and answers questions | Runs AI models on your computer        | Stores embeddings and performs similarity search | Converts text into numerical vectors               | Retrieves relevant information and generates accurate answers            |
+| **Main Job**                      | Thinks and generates responses       | Runs the AI model                      | Finds similar information                        | Understands text meaning                           | Searches documents before answering                                      |
+| **Input**                         | Prompt                               | AI Model (Llama, Mistral, Gemma, etc.) | Embeddings (Vectors)                             | Text                                               | User Question                                                            |
+| **Output**                        | Text, Code, Summary, Translation     | Runs the model locally                 | Most similar documents                           | Numerical vectors                                  | Accurate answer using retrieved context                                  |
+| **Needs Internet?**               | Only to download (can run locally)   | Only to download models                | No                                               | Depends on the model                               | Depends on the architecture                                              |
+| **Stores Data?**                  | ❌ No                                 | ❌ No                                   | ✅ Yes (Vectors)                                  | ❌ No                                               | ❌ No                                                                     |
+| **Uses AI?**                      | ✅ Yes                                | ❌ No (Runtime)                         | ❌ No                                             | ✅ Yes                                              | ✅ Yes                                                                    |
+| **Works With**                    | Ollama, Hugging Face, vLLM           | Llama, Mistral, Gemma, Qwen            | Embeddings                                       | FAISS, Pinecone, ChromaDB                          | LLM + Vector Database                                                    |
+| **Real-Time Example**             | Writes a leave application           | Runs Llama locally                     | Finds warranty document                          | Converts "Warranty" into vectors                   | Finds warranty PDF and answers correctly                                 |
+| **Example in Your Watch Chatbot** | Generates the final answer           | Runs Llama locally (optional)          | Stores watch document embeddings                 | Converts watch PDFs into vectors                   | Retrieves watch details and answers customer questions                   |
+
+
+===========
+
+| Name                | Think of It As                                  |
+| ------------------- | ----------------------------------------------- |
+| **Llama**           | 🧠 AI Brain (the model)                         |
+| **Ollama**          | 💻 AI Player/Engine (runs the model)            |
+| **FAISS**           | 📚 Smart Librarian (finds relevant information) |
+| **Embedding Model** | 🔄 Meaning Converter (text → vectors)           |
+| **RAG**             | 🔍 Search + Answer System                       |
+
+
+===========
+
+| Component           | One-Line Answer                                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Llama**           | An open-source Large Language Model (LLM) developed by Meta that generates human-like text.                                     |
+| **Ollama**          | A local runtime that downloads and runs LLMs such as Llama, Mistral, Gemma, and Qwen on your computer.                          |
+| **FAISS**           | A vector database developed by Meta that stores embeddings and performs fast similarity search.                                 |
+| **Embedding Model** | An AI model that converts text, images, or other data into numerical vectors while preserving semantic meaning.                 |
+| **RAG**             | A technique that retrieves relevant information from external knowledge sources and uses an LLM to generate accurate responses. |
+
+=========
