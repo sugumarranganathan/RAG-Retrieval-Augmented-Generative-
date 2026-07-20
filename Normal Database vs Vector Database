@@ -1,0 +1,26 @@
+Normal Database and Vector Database
+===================================
+
+| Normal Database          | Vector Database                 |
+| ------------------------ | ------------------------------- |
+| Stores rows and columns  | Stores embeddings (vectors)     |
+| Searches exact words     | Searches by meaning             |
+| SQL queries              | Similarity search               |
+| Best for structured data | Best for AI and semantic search |
+
+
+=========
+
+Popular Vector Databases
+
+| Vector Database | Description                                                      |
+| --------------- | ---------------------------------------------------------------- |
+| **FAISS**       | Free, fast, runs locally (great for learning and small projects) |
+| **ChromaDB**    | Open-source, easy to use with Python                             |
+| **Pinecone**    | Managed cloud vector database                                    |
+| **Weaviate**    | Open-source and cloud options                                    |
+| **Milvus**      | Designed for very large-scale vector search                      |
+
+
+=======
+
