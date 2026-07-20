@@ -1,0 +1,160 @@
+Why Do We Need Ollama?
+
+Suppose your company has confidential documents.
+
+You cannot upload them to ChatGPT.
+
+Instead
+
+Install Ollama
+
+↓
+
+Download Llama
+
+↓
+
+Run locally
+
+↓
+
+Company documents never leave your computer.
+=====
+
+Example
+
+Hospital
+
+Patient Records
+
+↓
+
+Ollama
+
+↓
+
+Llama
+
+↓
+
+Answer
+
+No data goes to the cloud.
+
+Restaurant Example
+
+Restaurant Menu PDF
+
+↓
+
+Ollama
+
+↓
+
+Llama
+
+↓
+
+Customer asks
+
+"Do you have vegetarian pizza?"
+
+↓
+
+Llama answers from local data.
+
+No internet required.
+
+===========
+
+Watch Chatbot Example
+
+Suppose your watch company doesn't want customer data sent to OpenAI.
+
+Instead
+
+Watch PDF
+
+↓
+
+FAISS
+
+↓
+
+Ollama
+
+↓
+
+Llama
+
+↓
+
+Answer
+
+Everything stays inside your company.
+
+======
+
+How Ollama Works
+Install Ollama
+
+↓
+
+Download Model
+
+↓
+
+Run Model
+
+↓
+
+Ask Questions
+
+↓
+
+Get Answers
+
+====
+
+Installing Ollama
+
+Example
+
+ollama run llama3
+
+What happens?
+
+Download Llama 3
+
+↓
+
+Store on Computer
+
+↓
+
+Start AI Server
+
+↓
+
+Ready to Chat
+
+====
+
+Other Models Supported by Ollama
+
+Ollama can run many open-source models.
+
+| Model     | Developed By | Country        |
+| --------- | ------------ | -------------- |
+| Llama 3   | Meta         | 🇺🇸 USA       |
+| Mistral   | Mistral AI   | 🇫🇷 France    |
+| Gemma     | Google       | 🇺🇸 USA       |
+| Phi       | Microsoft    | 🇺🇸 USA       |
+| DeepSeek  | DeepSeek AI  | 🇨🇳 China     |
+| Qwen      | Alibaba      | 🇨🇳 China     |
+| CodeLlama | Meta         | 🇺🇸 USA       |
+| TinyLlama | Community    | 🌍 Open Source |
+
+
+===
+
