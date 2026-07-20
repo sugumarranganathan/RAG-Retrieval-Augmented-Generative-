@@ -1,3 +1,17 @@
+| Feature              | Llama                                 | Ollama                                 |
+| -------------------- | ------------------------------------- | -------------------------------------- |
+| Type                 | Large Language Model (LLM)            | Software / Runtime                     |
+| Developed By         | Meta                                  | Ollama Inc.                            |
+| Country              | 🇺🇸 USA                              | 🇺🇸 USA                               |
+| Purpose              | Generates text                        | Runs AI models locally                 |
+| Installation         | Download model weights                | Install the Ollama application         |
+| Internet Required    | Only to download initially            | Only to download models initially      |
+| Can Answer Questions | ✅ Yes                                 | ❌ No (it runs a model that answers)    |
+| Can Run Offline      | Needs a runtime like Ollama           | ✅ Yes                                  |
+| Used With            | Ollama, llama.cpp, vLLM, Hugging Face | Llama, Mistral, Gemma, Qwen, Phi, etc. |
+| Example              | Llama 3.1                             | `ollama run llama3.1`                  |
+
+
 Llama vs Ollama
 -----------------
 
