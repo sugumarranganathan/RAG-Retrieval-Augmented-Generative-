@@ -1,0 +1,359 @@
+LLM vs RAG
+
+| LLM Only                          | LLM + RAG                           |
+| --------------------------------- | ----------------------------------- |
+| Uses training knowledge           | Uses your latest documents          |
+| Can hallucinate                   | More accurate                       |
+| Doesn't know private company data | Knows your uploaded PDFs            |
+| Knowledge may be outdated         | Can use updated files               |
+| Good for general questions        | Best for company-specific questions |
+
+
+The Complete Flow
+               User Question
+                     │
+                     ▼
+      "What is the warranty period?"
+                     │
+                     ▼
+       Convert Question to Embedding
+                     │
+                     ▼
+          Search FAISS / ChromaDB
+                     │
+                     ▼
+      Retrieve Top Relevant Chunks
+                     │
+                     ▼
+         Send Context + Question
+              to Gemini/GPT
+                     │
+                     ▼
+        Generate Accurate Answer
+
+
+====
+How this connects to your Google Colab project
+
+From your recent work, you've already built most of a RAG pipeline:
+
+PyMuPDF → Extracts text from watch PDFs.
+Text Chunking → Splits the PDF into smaller sections.
+SentenceTransformer (all-MiniLM-L6-v2) → Converts each chunk into embeddings.
+FAISS → Stores and searches those embeddings efficiently.
+Gemini/OpenAI API → Receives the retrieved chunks and generates a natural-language answer.
+
+So when your user asks, "Show Titan watches under ₹5,000 with a leather strap," the system does not search the entire PDF line by line.
+It searches the vector database for the most relevant chunks, then lets the LLM generate a clear, conversational answer. 
+This is the core idea your instructor is introducing in the "Why RAG?" lesson.
+
+=====
+
+Step 1: What is an AI Model?
+
+An AI model is a mathematical program trained using huge amounts of data.
+
+Example
+
+Books
+Wikipedia
+News
+Research Papers
+Internet
+
+↓
+
+Training
+
+↓
+
+AI Model
+
+The model learns patterns, not facts like a database.
+
+========
+
+Step 2: What is an LLM?
+
+LLM = Large Language Model
+
+Examples
+
+GPT-4
+GPT-5
+Gemini
+Claude
+Llama
+
+The LLM predicts the next most likely word.
+
+Example
+
+Input
+
+India is famous for ______
+
+The model predicts
+
+cricket
+
+or
+
+spices
+
+or
+
+culture
+
+based on probability.
+
+This is what your instructor wrote as "continuous prediction."
+
+=======
+
+Step 3: Why ChatGPT Can Answer Questions
+
+ChatGPT uses an LLM.
+
+The process is
+
+User
+
+↓
+
+ChatGPT
+
+↓
+
+OpenAI API
+
+↓
+
+GPT Model
+
+↓
+
+Predict Next Tokens
+
+↓
+
+Answer
+
+The model does not search Google every time. It answers based on what it learned during training (unless tools like RAG or web search are added).
+
+======
+
+Step 4: The Problem with Only an LLM
+
+Imagine you ask:
+
+What is Sugumar Company's leave policy?
+
+The GPT model has never seen your company's private HR policy.
+
+It has only learned general knowledge.
+
+So it might answer:
+
+Most companies provide 12–20 casual leave days.
+
+This is only a guess.
+
+This guessing is called hallucination.
+
+=======
+
+Step 5: Why RAG is Needed
+
+Instead of guessing,
+
+RAG first searches your documents.
+
+User Question
+
+↓
+
+Search Documents
+
+↓
+
+Find Relevant Information
+
+↓
+
+Give Context to LLM
+
+↓
+
+LLM Generates Answer
+
+Now the answer becomes
+
+According to your HR Policy Version 3.2,
+
+Casual Leave = 12 days
+
+Sick Leave = 10 days
+
+This answer comes from your document.
+
+=====
+
+Real-Time Example 1 – Your Watch Chatbot
+
+Without RAG
+
+Customer asks
+
+Show Titan watches under ₹5000.
+
+LLM answers
+
+Titan has many affordable watches.
+
+Not very helpful.
+
+With RAG
+
+User
+
+↓
+
+Watch PDF
+
+↓
+
+FAISS Search
+
+↓
+
+Top Matching Watches
+
+↓
+
+Gemini
+
+↓
+
+Answer
+
+Now AI says
+
+Watch	Price
+Titan Neo	₹4,599
+Titan Karishma	₹4,850
+Titan Analog	₹4,999
+
+This is why your chatbot uses RAG.
+
+======
+
+Real-Time Example 2 – Hospital
+
+Doctor asks
+
+What medicine is prescribed for Patient ID 1023?
+
+Without RAG
+
+AI doesn't know.
+
+With RAG
+
+Hospital Database
+
+↓
+
+Retrieve Patient Record
+
+↓
+
+LLM
+
+↓
+
+Correct Medicine
+
+======
+
+Real-Time Example 3 – College
+
+Student asks
+
+When is the AI internal exam?
+
+Without RAG
+
+AI guesses.
+
+With RAG
+
+AI searches
+
+Academic Calendar
+Circular
+Notice
+
+Then answers
+
+AI Internal Exam: 28 July 2026.
+
+=======
+
+Why Doesn't OpenAI Store Every Company's Data?
+
+Suppose there are:
+
+100 million companies
+10 billion PDFs
+New documents every day
+
+It is impossible to retrain the LLM every time a document changes.
+
+Instead:
+
+Company PDF
+
+↓
+
+Vector Database
+
+↓
+
+RAG
+
+↓
+
+LLM
+
+No retraining is needed.
+
+=====
+
+The Complete Flow
+               User Question
+                     │
+                     ▼
+      "What is the warranty period?"
+                     │
+                     ▼
+       Convert Question to Embedding
+                     │
+                     ▼
+          Search FAISS / ChromaDB
+                     │
+                     ▼
+      Retrieve Top Relevant Chunks
+                     │
+                     ▼
+         Send Context + Question
+              to Gemini/GPT
+                     │
+                     ▼
+        Generate Accurate Answer
+
+==========
+
+
+
+
