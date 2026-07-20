@@ -1,0 +1,64 @@
+LangChain vs Llama vs FAISS vs Ollama vs RAG
+--------------------------------------------
+
+
+| Technology          | Purpose                                                          |
+| ------------------- | ---------------------------------------------------------------- |
+| **Llama**           | AI model that generates text                                     |
+| **Ollama**          | Runs AI models locally                                           |
+| **Embedding Model** | Converts text into vectors                                       |
+| **FAISS**           | Stores vectors and finds similar information                     |
+| **LangChain**       | Connects all AI components into one workflow                     |
+| **RAG**             | Technique that retrieves information before generating an answer |
+
+=====
+
+Complete Workflow
+
+                 PDF Files
+                     │
+                     ▼
+            Embedding Model
+                     │
+                     ▼
+                  FAISS
+                     │
+────────────────────────────────────
+
+User Question
+        │
+        ▼
+    LangChain
+        │
+        ▼
+Retrieve Relevant Data
+        │
+        ▼
+Llama / GPT / Gemini
+        │
+        ▼
+Accurate Answer
+
+==========
+
+| Topic         | Answer                                                                                                                                           |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **LangChain** | An open-source framework used to build AI applications by connecting LLMs with external data sources, vector databases, APIs, memory, and tools. |
+
+
+================
+
+| Component           | Think of It As                                              |
+| ------------------- | ----------------------------------------------------------- |
+| **Llama**           | 🧠 AI Brain                                                 |
+| **Ollama**          | 💻 Engine that runs the AI brain locally                    |
+| **Embedding Model** | 🔄 Meaning Converter (text → vectors)                       |
+| **FAISS**           | 📚 Smart Librarian (stores and finds vectors)               |
+| **LangChain**       | 🔗 Project Manager (connects all components together)       |
+| **RAG**             | 🔍 Research Assistant (retrieves information, then answers) |
+
+===============
+
+
+
+
