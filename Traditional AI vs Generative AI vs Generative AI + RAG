@@ -1,0 +1,94 @@
+Traditional AI vs Generative AI vs Generative AI + RAG
+-------------------------------------------------------
+
+| No.    | Traditional AI                                                                   | Generative AI                                              | Generative AI + RAG                                                                |
+| ------ | -------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **1**  | Main Purpose: Predicts a class, value, or decision                               | Generates new content (text, code, images, etc.)           | Generates answers using retrieved external knowledge                               |
+| **2**  | Input: Structured/labeled data                                                   | Prompt or instruction                                      | Prompt + External documents (PDFs, databases, websites)                            |
+| **3**  | Training: Requires training on a specific dataset                                | Uses a pre-trained Large Language Model (LLM)              | Uses a pre-trained LLM + Retrieval system (no model retraining)                    |
+| **4**  | Knowledge Source: Training dataset only                                          | Knowledge learned during pre-training                      | Latest documents retrieved at query time                                           |
+| **5**  | Output: Classification, regression, prediction                                   | Human-like generated content                               | Accurate, context-aware generated content                                          |
+| **6**  | Data Updates: Retrain the model when data changes                                | Cannot automatically learn new private data                | Simply update documents or vector database; no retraining required                 |
+| **7**  | Hallucination Risk: Low for trained tasks                                        | Higher because the model may guess                         | Lower because answers are grounded in retrieved information                        |
+| **8**  | Common Technologies: Decision Tree, SVM, Random Forest, XGBoost, Neural Networks | GPT, Gemini, Claude, Llama, Mistral                        | GPT/Gemini/Claude + FAISS, ChromaDB, Pinecone, LangChain, LlamaIndex               |
+| **9**  | Real-Time Example: Spam detection, fraud detection, house price prediction       | Email writing, code generation, story writing, translation | HR chatbot, document Q&A, legal assistant, medical chatbot, product catalog search |
+| **10** | Best Use Cases: Fixed prediction tasks with labeled data                         | Creative and conversational AI                             | Enterprise AI with company-specific and up-to-date information                     |
+
+
+==========
+
+Workflow Comparison
+------------------
+
+| Traditional AI                                       | Generative AI                     | Generative AI + RAG                                            |
+| ---------------------------------------------------- | --------------------------------- | -------------------------------------------------------------- |
+| Data → Preprocessing → Training → Model → Prediction | Prompt → LLM → Generated Response | Prompt → Retrieve Relevant Documents → LLM → Accurate Response |
+
+
+=============
+
+Real-Time Example
+Traditional AI
+
+Question: Is this email spam?
+
+Email
+   │
+   ▼
+Machine Learning Model
+   │
+   ▼
+Spam / Not Spam
+
+========
+
+Generative AI
+
+Question: Write a leave application.
+
+Prompt
+   │
+   ▼
+LLM
+   │
+   ▼
+Generated Leave Letter
+
+==========
+
+Generative AI + RAG
+
+Question: What is my company's leave policy?
+
+Question
+    │
+    ▼
+Search Company HR PDF
+    │
+    ▼
+Retrieve Relevant Paragraph
+    │
+    ▼
+LLM
+    │
+    ▼
+Accurate Answer
+
+======
+
+Easy Interview Summary
+----------------------
+
+| Traditional AI | Generative AI | Generative AI + RAG    |
+| -------------- | ------------- | ---------------------- |
+| **Predicts**   | **Creates**   | **Searches + Creates** |
+
+
+==========
+
+One-line definitions
+Traditional AI: Learns from labeled data to make predictions or classifications.
+Generative AI: Uses a pre-trained LLM to generate new content from prompts.
+Generative AI + RAG: Retrieves relevant external information first, then uses an LLM to generate accurate, up-to-date answers.
+
+=========
