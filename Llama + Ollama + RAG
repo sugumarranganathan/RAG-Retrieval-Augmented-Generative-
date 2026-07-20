@@ -1,0 +1,63 @@
+What is Llama?
+
+Llama is an open-source Large Language Model (LLM) developed by Meta that can understand and generate human-like text.
+
+What is Ollama?
+
+Ollama is a local runtime that downloads and runs LLMs such as Llama, Mistral, Gemma, and Qwen on your computer, enabling private and offline AI applications.
+
+============
+
+
+Llama + Ollama + RAG
+====================
+
+This is how many companies build private AI assistants.
+
+                    PDF Files
+                        │
+                        ▼
+                  Text Extraction
+                        │
+                        ▼
+                 Create Embeddings
+                        │
+                        ▼
+                 Store in FAISS
+────────────────────────────────────
+
+User Question
+        │
+        ▼
+Question Embedding
+        │
+        ▼
+FAISS retrieves relevant documents
+        │
+        ▼
+Ollama
+        │
+        ▼
+Llama
+        │
+        ▼
+Accurate Answer
+
+========
+
+
+Simple Analogy
+
+| Real Life   | AI World        |
+| ----------- | --------------- |
+| Human Brain | Llama           |
+| Human Body  | Computer        |
+| Driver      | Ollama          |
+| Books       | PDF Documents   |
+| Librarian   | FAISS           |
+| Teacher     | Embedding Model |
+| Student     | User            |
+
+
+=========
+
