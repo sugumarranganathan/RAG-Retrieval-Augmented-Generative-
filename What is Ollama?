@@ -1,0 +1,97 @@
+What is Ollama?
+
+Now comes the important part.
+
+Ollama is NOT an AI model.
+
+Ollama is software.
+
+Its job is to download, install, and run LLMs on your own computer.
+
+Simple Definition
+
+Ollama is software that lets you run LLMs locally without using cloud APIs.
+
+Think like this:
+
+Llama = Car
+
+Ollama = Driver
+
+Without the driver,
+
+the car doesn't move.
+
+Another example
+
+Movie = Llama
+
+VLC Player = Ollama
+
+Movie
+
+↓
+
+Needs VLC
+
+↓
+
+Plays movie
+
+Llama
+
+↓
+
+Needs Ollama
+
+↓
+
+Runs locally
+
+Real-Time Example
+
+Normally
+
+User
+
+↓
+
+Internet
+
+↓
+
+OpenAI Server
+
+↓
+
+GPT
+
+↓
+
+Answer
+
+Internet required.
+
+Using Ollama
+
+User
+
+↓
+
+Ollama
+
+↓
+
+Llama
+
+↓
+
+Answer
+
+No internet is required after the model is downloaded.
+
+=======
+
+
+
+Everything runs on your computer.
