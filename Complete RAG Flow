@@ -1,0 +1,69 @@
+             PDF
+              │
+              ▼
+        Extract Text
+              │
+              ▼
+      Create Embeddings
+              │
+              ▼
+ Store in Vector Database
+        (FAISS)
+────────────────────────────
+
+User Question
+       │
+       ▼
+Create Question Embedding
+       │
+       ▼
+Search Vector Database
+       │
+       ▼
+Top Matching Documents
+       │
+       ▼
+LLM (Gemini/GPT)
+       │
+       ▼
+Final Answer
+
+==========
+
+Simple Analogy
+
+Think of a vector database as a smart librarian.
+
+Books = Your PDFs or documents
+Book summaries = Embeddings
+Librarian = Vector database
+Reader = User
+Answer writer = LLM (ChatGPT/Gemini)
+
+When you ask a question:
+
+The librarian (vector database) quickly finds the most relevant books.
+The writer (LLM) reads those books and explains the answer in simple language.
+
+=========
+
+In Your Watch Chatbot
+
+Your Google Colab project already uses a vector database:
+
+from sentence_transformers import SentenceTransformer
+import faiss
+SentenceTransformer converts watch descriptions into embeddings.
+FAISS stores those embeddings.
+When a customer asks a question, FAISS finds the most relevant watch information.
+Gemini or another LLM uses that information to generate the final answer.
+
+One-line interview answer:
+
+A vector database is a specialized database that stores embeddings (vectors) and performs fast similarity search to retrieve
+the most relevant information based on meaning rather than exact keyword matching.
+
+=========
+
+
+
