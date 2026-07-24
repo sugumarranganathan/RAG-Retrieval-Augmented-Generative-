@@ -1,1 +1,104 @@
-s
+1. What is the primary use of the ChatGPT API?
+A) To generate AI-based responses for text inputs
+B) To store and retrieve large datasets
+C) To perform video processing
+
+(Answer: A)
+
+2. What does API stand for?
+A) Automated Processing Interface
+B) Application Programming Interface
+C) Artificial Processing Integration
+
+(Answer: B)
+
+3. Which of the following is commonly used to create a chatbot using Python on Replit?
+A) NumPy
+B) Flask
+C) Pandas
+
+(Answer: B)
+
+4. What is the purpose of the main.py file in a Python project?
+A) It contains the project documentation
+B) It serves as the entry point for the application
+C) It is used to store environment variables
+
+(Answer: B)
+
+5. Which HTTP method is generally used to send data to an API?
+A) GET
+B) POST
+C) DELETE
+
+(Answer: B)
+
+6. Which of the following best describes Replit?
+A) A cloud-based coding and deployment platform
+B) A database management system
+C) A Python library for AI models
+
+(Answer: A)
+
+7. What happens if you don’t provide a valid API key when using the ChatGPT API?
+A) The chatbot will switch to offline mode
+B) The API request will be rejected
+C) The API will generate random responses
+
+(Answer: B)
+
+8. What is the purpose of the max_tokens parameter in the ChatGPT API request?
+A) To control the maximum number of words in the response
+B) To limit API usage cost
+C) Both A and B
+
+(Answer: C)
+
+9. Which company provides the ChatGPT API?
+A) Microsoft
+B) Google
+C) OpenAI
+
+(Answer: C)
+
+10. What role does ChromaDB play in a RAG pipeline?
+A) Stores and retrieves embeddings
+B) Performs image recognition
+C) Analyzes video frames
+
+(Answer: A)
+
+11. Which of the following best describes Retrieval-Augmented Generation (RAG)?
+A) A framework that combines data retrieval and AI text generation
+B) A video editing technology
+C) A language translation tool
+
+(Answer: A)
+
+12. Which library can be used to load PDF documents in a RAG pipeline?
+A) PyPDFLoader
+B) PDFReader
+C) LangPDF
+
+(Answer: A)
+
+13. What is a common use case for RAG models?
+A) Image processing
+B) Customer support chatbots
+C) Video generation
+
+(Answer: B)
+
+14. Which AI model is used in the ChatGPT API?
+A) GPT-4
+B) CNN
+C) RNN
+
+(Answer: A)
+
+15. What is a slug in Replit?
+A) A coding error in the program
+B) A unique identifier for a Repl in the URL
+C) A Python debugging tool
+
+(Answer: B)
